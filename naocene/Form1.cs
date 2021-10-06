@@ -20,14 +20,52 @@ namespace naocene
         public void SetMyCustomFormat()
         {
             DateTime time = DateTime.Now;
+            DateTime day = DateTime.Today;
             aktualny_czas.Format = DateTimePickerFormat.Custom;
-            aktualny_czas.CustomFormat = "hh:mm";
+            aktualny_czas.CustomFormat = "HH:mm";
             aktualny_czas.Value = time;
+            aktualna_data.Value = day;
         }
         private void odswiezacz_Tick(object sender, EventArgs e)
         {
             SetMyCustomFormat();
         }
+        struct NFZ
+        {
+            public string imie;
+            public string nazwa_badania;
+            public DateTime data_badania;
+        }
+        NFZ pacjent;
+        private void zatwierdz_Click(object sender, EventArgs e)
+        {
+            imie_box.Text = pacjent.imie;
+            nazwa_badania_box.Text = pacjent.nazwa_badania;
+            data_badania_pick.Value = pacjent.data_badania;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -36,6 +74,7 @@ namespace naocene
         {
 
         }
+
 
     }
 }

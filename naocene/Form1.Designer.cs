@@ -39,6 +39,7 @@ namespace naocene
             this.aktualna_data = new System.Windows.Forms.DateTimePicker();
             this.aktualny_czas = new System.Windows.Forms.DateTimePicker();
             this.odswiezacz = new System.Windows.Forms.Timer(this.components);
+            this.zatwierdz = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imie
@@ -116,11 +117,22 @@ namespace naocene
             this.odswiezacz.Interval = 10000;
             this.odswiezacz.Tick += new System.EventHandler(this.odswiezacz_Tick);
             // 
+            // zatwierdz
+            // 
+            this.zatwierdz.Location = new System.Drawing.Point(323, 278);
+            this.zatwierdz.Name = "zatwierdz";
+            this.zatwierdz.Size = new System.Drawing.Size(100, 23);
+            this.zatwierdz.TabIndex = 8;
+            this.zatwierdz.Text = "Dodaj wizyte";
+            this.zatwierdz.UseVisualStyleBackColor = true;
+            this.zatwierdz.Click += new System.EventHandler(this.zatwierdz_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.zatwierdz);
             this.Controls.Add(this.aktualny_czas);
             this.Controls.Add(this.aktualna_data);
             this.Controls.Add(this.nazwa_badania_box);
@@ -147,6 +159,7 @@ namespace naocene
         private System.Windows.Forms.DateTimePicker aktualna_data;
         private System.Windows.Forms.DateTimePicker aktualny_czas;
         private System.Windows.Forms.Timer odswiezacz;
+        private System.Windows.Forms.Button zatwierdz;
     }
 }
 
