@@ -15,6 +15,26 @@ namespace naocene
         public Form1()
         {
             InitializeComponent();
+            SetMyCustomFormat();
+        }
+        public void SetMyCustomFormat()
+        {
+            DateTime time = DateTime.Now;
+            aktualny_czas.Format = DateTimePickerFormat.Custom;
+            aktualny_czas.CustomFormat = "hh:mm";
+            aktualny_czas.Value = time;
+        }
+        private void odswiezacz_Tick(object sender, EventArgs e)
+        {
+            SetMyCustomFormat();
+        }
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void aktualny_czas_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
