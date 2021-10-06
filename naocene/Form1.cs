@@ -42,7 +42,13 @@ namespace naocene
             imie_box.Text = pacjent.imie;
             nazwa_badania_box.Text = pacjent.nazwa_badania;
             data_badania_pick.Value = pacjent.data_badania;
+
+            pacjent_imie.Text = pacjent.imie;
+            pacjent_nazwa_badania.Text = pacjent.nazwa_badania;
+            pacjent_data.Value = pacjent.data_badania;
         }
+        
+        
 
 
 

@@ -40,6 +40,9 @@ namespace naocene
             this.aktualny_czas = new System.Windows.Forms.DateTimePicker();
             this.odswiezacz = new System.Windows.Forms.Timer(this.components);
             this.zatwierdz = new System.Windows.Forms.Button();
+            this.pacjent_imie = new System.Windows.Forms.Label();
+            this.pacjent_nazwa_badania = new System.Windows.Forms.Label();
+            this.pacjent_data = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // imie
@@ -127,11 +130,41 @@ namespace naocene
             this.zatwierdz.UseVisualStyleBackColor = true;
             this.zatwierdz.Click += new System.EventHandler(this.zatwierdz_Click);
             // 
+            // pacjent_imie
+            // 
+            this.pacjent_imie.AutoSize = true;
+            this.pacjent_imie.Location = new System.Drawing.Point(570, 130);
+            this.pacjent_imie.Name = "pacjent_imie";
+            this.pacjent_imie.Size = new System.Drawing.Size(38, 15);
+            this.pacjent_imie.TabIndex = 9;
+            this.pacjent_imie.Text = "label1";
+            // 
+            // pacjent_nazwa_badania
+            // 
+            this.pacjent_nazwa_badania.AutoSize = true;
+            this.pacjent_nazwa_badania.Location = new System.Drawing.Point(570, 171);
+            this.pacjent_nazwa_badania.Name = "pacjent_nazwa_badania";
+            this.pacjent_nazwa_badania.Size = new System.Drawing.Size(38, 15);
+            this.pacjent_nazwa_badania.TabIndex = 10;
+            this.pacjent_nazwa_badania.Text = "label1";
+            // 
+            // pacjent_data
+            // 
+            this.pacjent_data.Enabled = false;
+            this.pacjent_data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.pacjent_data.Location = new System.Drawing.Point(570, 220);
+            this.pacjent_data.Name = "pacjent_data";
+            this.pacjent_data.Size = new System.Drawing.Size(78, 23);
+            this.pacjent_data.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pacjent_data);
+            this.Controls.Add(this.pacjent_nazwa_badania);
+            this.Controls.Add(this.pacjent_imie);
             this.Controls.Add(this.zatwierdz);
             this.Controls.Add(this.aktualny_czas);
             this.Controls.Add(this.aktualna_data);
@@ -160,6 +193,9 @@ namespace naocene
         private System.Windows.Forms.DateTimePicker aktualny_czas;
         private System.Windows.Forms.Timer odswiezacz;
         private System.Windows.Forms.Button zatwierdz;
+        private System.Windows.Forms.Label pacjent_imie;
+        private System.Windows.Forms.Label pacjent_nazwa_badania;
+        private System.Windows.Forms.DateTimePicker pacjent_data;
     }
 }
 
