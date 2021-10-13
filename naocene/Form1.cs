@@ -18,7 +18,7 @@ namespace naocene
             SetMyCustomFormat();
         }
         public void SetMyCustomFormat()
-        {
+        {//
             DateTime time = DateTime.Now;
             DateTime day = DateTime.Today;
             aktualny_czas.Format = DateTimePickerFormat.Custom;
