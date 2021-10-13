@@ -135,18 +135,18 @@ namespace naocene
             this.pacjent_imie.AutoSize = true;
             this.pacjent_imie.Location = new System.Drawing.Point(570, 130);
             this.pacjent_imie.Name = "pacjent_imie";
-            this.pacjent_imie.Size = new System.Drawing.Size(38, 15);
+            this.pacjent_imie.Size = new System.Drawing.Size(68, 15);
             this.pacjent_imie.TabIndex = 9;
-            this.pacjent_imie.Text = "label1";
+            this.pacjent_imie.Text = "Imie klienta";
             // 
             // pacjent_nazwa_badania
             // 
             this.pacjent_nazwa_badania.AutoSize = true;
             this.pacjent_nazwa_badania.Location = new System.Drawing.Point(570, 171);
             this.pacjent_nazwa_badania.Name = "pacjent_nazwa_badania";
-            this.pacjent_nazwa_badania.Size = new System.Drawing.Size(38, 15);
+            this.pacjent_nazwa_badania.Size = new System.Drawing.Size(87, 15);
             this.pacjent_nazwa_badania.TabIndex = 10;
-            this.pacjent_nazwa_badania.Text = "label1";
+            this.pacjent_nazwa_badania.Text = "Nazwa badania";
             // 
             // pacjent_data
             // 
