@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace naocene
 {
+    public struct NFZ
+    {
+        public string imie;
+        public string nazwa_badania;
+        public DateTime data_badania;
+    }
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
             SetMyCustomFormat();
+            kolejka.Enqueue(pacjent);
         }
         public void SetMyCustomFormat()
         {//
@@ -30,12 +36,7 @@ namespace naocene
         {
             SetMyCustomFormat();
         }
-        struct NFZ
-        {
-            public string imie;
-            public string nazwa_badania;
-            public DateTime data_badania;
-        }
+        
         NFZ pacjent = new NFZ();
         private void zatwierdz_Click(object sender, EventArgs e)
         {
@@ -47,40 +48,13 @@ namespace naocene
             pacjent_nazwa_badania.Text = pacjent.nazwa_badania;
             pacjent_data.Value = pacjent.data_badania;
         }
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-        private void aktualny_czas_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
+        Queue<NFZ> kolejka = new Queue<NFZ>();
+            
     }
-}
+        }
+    
+
