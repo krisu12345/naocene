@@ -24,7 +24,7 @@ namespace naocene
             aktualny_czas.Format = DateTimePickerFormat.Custom;
             aktualny_czas.CustomFormat = "HH:mm";
             aktualny_czas.Value = time;
-            aktualna_data.Value = day;
+            aktualna_data.Value = day;//
         }
         private void odswiezacz_Tick(object sender, EventArgs e)
         {
