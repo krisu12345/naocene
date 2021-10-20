@@ -36,7 +36,9 @@ namespace naocene
         {
             SetMyCustomFormat();
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
         NFZ pacjent = new NFZ();
         private void zatwierdz_Click(object sender, EventArgs e)
         {
