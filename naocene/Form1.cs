@@ -21,7 +21,6 @@ namespace naocene////
         {
             InitializeComponent();
             SetMyCustomFormat();
-            kolejka.Enqueue(pacjent);
         }
         public void SetMyCustomFormat()
         {//
@@ -49,13 +48,54 @@ namespace naocene////
             pacjent_imie.Text = pacjent.imie;
             pacjent_nazwa_badania.Text = pacjent.nazwa_badania;
             pacjent_data.Value = pacjent.data_badania;
+
+            kolejka.Enqueue(pacjent); // dodawanie do kolejki
+
+            var wypisanie = kolejka.ToArray()[kolejka.ToArray().Length -1]; //pobiera
+            if (kolejka.ToArray().Length > 1) {
+                var poprzednie = kolejka.ToArray()[kolejka.ToArray().Length - 2];
+                pop_imie.Text = $"{poprzednie.imie} \n{poprzednie.nazwa_badania} \n{poprzednie.data_badania.ToString("d.MM.yyyy")}\n \n";
+                naj_imie.Text = $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
+            }
+            else
+            {
+                naj_imie.Text += $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
+            }
+
         }
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
         Queue<NFZ> kolejka = new Queue<NFZ>();
-            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void naj_imie_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
         }
     
