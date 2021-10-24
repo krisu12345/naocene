@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 namespace naocene////
 {
     public struct NFZ
@@ -40,7 +41,7 @@ namespace naocene////
         /// </summary>
         NFZ pacjent = new NFZ();
         private void zatwierdz_Click(object sender, EventArgs e)
-        {
+        { //nadawanie wartosci strukturom
             pacjent.imie = imie_box.Text;
             pacjent.nazwa_badania = nazwa_badania_box.Text;
             pacjent.data_badania = data_badania_pick.Value;
@@ -52,49 +53,35 @@ namespace naocene////
             kolejka.Enqueue(pacjent); // dodawanie do kolejki
 
             var wypisanie = kolejka.ToArray()[kolejka.ToArray().Length -1]; //pobiera
-            if (kolejka.ToArray().Length > 1) {
+            if (kolejka.ToArray().Length == 2)
+            {
                 var poprzednie = kolejka.ToArray()[kolejka.ToArray().Length - 2];
                 pop_imie.Text = $"{poprzednie.imie} \n{poprzednie.nazwa_badania} \n{poprzednie.data_badania.ToString("d.MM.yyyy")}\n \n";
                 naj_imie.Text = $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
             }
+            else if (kolejka.ToArray().Length > 2)
+            {
+                prz_imie.Text += $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
+            }
             else
             {
-                naj_imie.Text += $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
+                naj_imie.Text = $"{wypisanie.imie} \n{wypisanie.nazwa_badania} \n{wypisanie.data_badania.ToString("d.MM.yyyy")}\n \n";
             }
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
         Queue<NFZ> kolejka = new Queue<NFZ>();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        private void naj_imie_Click(object sender, EventArgs e)
+        private void zapisz_Click(object sender, EventArgs e)
         {
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            // zapisywanie do pliku
+            using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath, "4 z plusem dla mnie.txt")))
+            {
+                foreach (var line in kolejka.ToArray())
+                    outputFile.WriteLine($"{line.imie} \n{line.nazwa_badania} \n{line.data_badania.ToString("d.MM.yyyy")}\n \n");
+            }
         }
     }
         }

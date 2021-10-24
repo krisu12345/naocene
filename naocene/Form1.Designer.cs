@@ -50,6 +50,7 @@ namespace naocene
             this.label6 = new System.Windows.Forms.Label();
             this.pop_imie = new System.Windows.Forms.Label();
             this.prz_imie = new System.Windows.Forms.Label();
+            this.zapisz = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // imie
@@ -69,7 +70,6 @@ namespace naocene
             this.nazwa_badania.Size = new System.Drawing.Size(87, 15);
             this.nazwa_badania.TabIndex = 1;
             this.nazwa_badania.Text = "Nazwa Badania";
-            this.nazwa_badania.Click += new System.EventHandler(this.label1_Click);
             // 
             // data_badania_pick
             // 
@@ -184,7 +184,7 @@ namespace naocene
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(192, 336);
+            this.label4.Location = new System.Drawing.Point(192, 404);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 15);
             this.label4.TabIndex = 15;
@@ -193,16 +193,16 @@ namespace naocene
             // naj_imie
             // 
             this.naj_imie.AutoSize = true;
-            this.naj_imie.Location = new System.Drawing.Point(323, 336);
+            this.naj_imie.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.naj_imie.Location = new System.Drawing.Point(318, 404);
             this.naj_imie.Name = "naj_imie";
             this.naj_imie.Size = new System.Drawing.Size(0, 15);
             this.naj_imie.TabIndex = 16;
-            this.naj_imie.Click += new System.EventHandler(this.naj_imie_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(192, 404);
+            this.label6.Location = new System.Drawing.Point(192, 336);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 15);
             this.label6.TabIndex = 17;
@@ -211,25 +211,35 @@ namespace naocene
             // pop_imie
             // 
             this.pop_imie.AutoSize = true;
-            this.pop_imie.Location = new System.Drawing.Point(323, 404);
+            this.pop_imie.Location = new System.Drawing.Point(323, 336);
             this.pop_imie.Name = "pop_imie";
             this.pop_imie.Size = new System.Drawing.Size(0, 15);
             this.pop_imie.TabIndex = 18;
-            this.pop_imie.Click += new System.EventHandler(this.label3_Click);
             // 
             // prz_imie
             // 
             this.prz_imie.AutoSize = true;
-            this.prz_imie.Location = new System.Drawing.Point(323, 484);
+            this.prz_imie.Location = new System.Drawing.Point(318, 484);
             this.prz_imie.Name = "prz_imie";
             this.prz_imie.Size = new System.Drawing.Size(0, 15);
             this.prz_imie.TabIndex = 19;
+            // 
+            // zapisz
+            // 
+            this.zapisz.Location = new System.Drawing.Point(565, 278);
+            this.zapisz.Name = "zapisz";
+            this.zapisz.Size = new System.Drawing.Size(147, 23);
+            this.zapisz.TabIndex = 20;
+            this.zapisz.Text = "zapisz kolejke w pliku";
+            this.zapisz.UseVisualStyleBackColor = true;
+            this.zapisz.Click += new System.EventHandler(this.zapisz_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 544);
+            this.Controls.Add(this.zapisz);
             this.Controls.Add(this.prz_imie);
             this.Controls.Add(this.pop_imie);
             this.Controls.Add(this.label6);
@@ -251,7 +261,6 @@ namespace naocene
             this.Controls.Add(this.imie);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,6 +288,7 @@ namespace naocene
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label pop_imie;
         private System.Windows.Forms.Label prz_imie;
+        private System.Windows.Forms.Button zapisz;
     }
 }
 
